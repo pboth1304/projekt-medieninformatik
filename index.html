@@ -1,10 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Montserrat:wght@200;300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
+    <style>
+      :root {
+        --white: #fff;
+        --white-transparent: rgba(255, 255, 255, 0.5);
+        --gold: #8d804c;
+        --page-padding-x: 10rem;
+        --page-padding-y: 5rem;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 62.5%;
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 0;
+        padding: 0;
+      }
+
+      ::backdrop {
+        background-color: green;
+      }
+
+      .text-white {
+        color: var(--white);
+      }
+
+      .heading-gold {
+        color: var(--gold);
+        font-family: 'Merriweather', serif;
+        font-weight: 300;
+        letter-spacing: 1px;
+        font-size: 2rem;
+        line-height: 3rem;
+      }
+
+      .animated {
+        animation-name: fade-in;
+        animation-duration: 0.8s;
+        animation-timing-function: ease-in;
+        opacity: 0;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
   </head>
   <body>
     <div id="app"></div>
