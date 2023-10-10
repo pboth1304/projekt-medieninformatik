@@ -1,8 +1,8 @@
 <template>
     <section class="todays-section">
         <template v-if="isVisible">
-            <h2 class="heading-gold">10 Weingemeinden sind heute die Felsengartenkellerei</h2>
-            <div class="slider-container">
+            <h2 class="heading-gold animated">10 Weingemeinden sind heute die Felsengartenkellerei</h2>
+            <div class="slider-container animated">
                 <swiper-container ref="swiperRef" init="false" class="swiper-container" @slidechange="onSlideChange">
                     <swiper-slide v-for="(slide, index) of imageSliderItems" :key="slide.title"
                         :class="index === activeSwiperIndex ? 'slide slide-active' : 'slide'"
@@ -17,15 +17,18 @@
 <script setup lang="ts">
 import { ref, watchEffect } from 'vue';
 import { register as registerSwiper, type SwiperContainer } from "swiper/element/bundle";
+import { useImageSliderItems } from '../composables/use-image-slider-items';
 import type { SwiperOptions } from 'swiper/types';
-
-registerSwiper();
 
 interface TownsOfFelsengartenkellereiProps {
     isVisible: boolean;
 }
 
+registerSwiper();
+
 defineProps<TownsOfFelsengartenkellereiProps>()
+
+const { imageSliderItems } = useImageSliderItems();
 
 const swiperRef = ref<SwiperContainer | null>(null);
 const activeSwiperIndex = ref(swiperRef.value?.swiper.activeIndex || 0);
@@ -63,65 +66,11 @@ const swiperConfig: SwiperOptions = {
 
 watchEffect(() => {
     if (swiperRef.value) {
+        // initialize swiper with config after swiper ref was instanciated
         Object.assign(swiperRef.value, swiperConfig);
         swiperRef.value.initialize();
-        console.log('swip', swiperRef.value.swiper.activeIndex);
     }
 })
-
-const imageSliderItems = ref(
-    [
-        {
-            title: 'Abstatt',
-            description: 'Abstatt liegt im Süden des Landkreises Heilbronn am Rande der Löwensteiner Berge im idyllischen Schozachtal. Besonders sehenswert sind einige der historischen Fachwerkhäuser aus dem 15./16. Jahrhundert und die Burg Wildeck bei Vohenlohe, welche im 12. Jahrhundert erbaut wurde. ',
-            imgPath: '/img/abstatt.jpg'
-        },
-        {
-            title: 'Besigheim',
-            description: 'Abstatt liegt im Süden des Landkreises Heilbronn am Rande der Löwensteiner Berge im idyllischen Schozachtal. Besonders sehenswert sind einige der historischen Fachwerkhäuser aus dem 15./16. Jahrhundert und die Burg Wildeck bei Vohenlohe, welche im 12. Jahrhundert erbaut wurde. ',
-            imgPath: '/img/logo.png'
-        },
-        {
-            title: 'Bietigheim',
-            description: 'Abstatt liegt im Süden des Landkreises Heilbronn am Rande der Löwensteiner Berge im idyllischen Schozachtal. Besonders sehenswert sind einige der historischen Fachwerkhäuser aus dem 15./16. Jahrhundert und die Burg Wildeck bei Vohenlohe, welche im 12. Jahrhundert erbaut wurde. ',
-            imgPath: '/img/weinfaesser.jpg'
-        },
-        {
-            title: 'Gemmrigheim',
-            description: 'Abstatt liegt im Süden des Landkreises Heilbronn am Rande der Löwensteiner Berge im idyllischen Schozachtal. Besonders sehenswert sind einige der historischen Fachwerkhäuser aus dem 15./16. Jahrhundert und die Burg Wildeck bei Vohenlohe, welche im 12. Jahrhundert erbaut wurde. ',
-            imgPath: '/img/abstatt.jpg'
-        },
-        {
-            title: 'Hessigheim',
-            description: 'Abstatt liegt im Süden des Landkreises Heilbronn am Rande der Löwensteiner Berge im idyllischen Schozachtal. Besonders sehenswert sind einige der historischen Fachwerkhäuser aus dem 15./16. Jahrhundert und die Burg Wildeck bei Vohenlohe, welche im 12. Jahrhundert erbaut wurde. ',
-            imgPath: '/img/abstatt.jpg'
-        },
-        {
-            title: 'Ilsfeld',
-            description: 'Abstatt liegt im Süden des Landkreises Heilbronn am Rande der Löwensteiner Berge im idyllischen Schozachtal. Besonders sehenswert sind einige der historischen Fachwerkhäuser aus dem 15./16. Jahrhundert und die Burg Wildeck bei Vohenlohe, welche im 12. Jahrhundert erbaut wurde. ',
-            imgPath: '/img/abstatt.jpg'
-        },
-        {
-            title: 'Ingersheim',
-            description: 'Abstatt liegt im Süden des Landkreises Heilbronn am Rande der Löwensteiner Berge im idyllischen Schozachtal. Besonders sehenswert sind einige der historischen Fachwerkhäuser aus dem 15./16. Jahrhundert und die Burg Wildeck bei Vohenlohe, welche im 12. Jahrhundert erbaut wurde. ',
-            imgPath: '/img/abstatt.jpg'
-        },
-        {
-            title: 'Liebenstein',
-            description: 'Abstatt liegt im Süden des Landkreises Heilbronn am Rande der Löwensteiner Berge im idyllischen Schozachtal. Besonders sehenswert sind einige der historischen Fachwerkhäuser aus dem 15./16. Jahrhundert und die Burg Wildeck bei Vohenlohe, welche im 12. Jahrhundert erbaut wurde. ',
-            imgPath: '/img/abstatt.jpg'
-        },
-        {
-            title: 'Löchgau',
-            description: 'Abstatt liegt im Süden des Landkreises Heilbronn am Rande der Löwensteiner Berge im idyllischen Schozachtal. Besonders sehenswert sind einige der historischen Fachwerkhäuser aus dem 15./16. Jahrhundert und die Burg Wildeck bei Vohenlohe, welche im 12. Jahrhundert erbaut wurde. ',
-            imgPath: '/img/abstatt.jpg'
-        },
-        {
-            title: 'Walheim',
-            description: 'Abstatt liegt im Süden des Landkreises Heilbronn am Rande der Löwensteiner Berge im idyllischen Schozachtal. Besonders sehenswert sind einige der historischen Fachwerkhäuser aus dem 15./16. Jahrhundert und die Burg Wildeck bei Vohenlohe, welche im 12. Jahrhundert erbaut wurde. ',
-            imgPath: '/img/abstatt.jpg'
-        }
-    ])
 
 </script>
 <style scoped>
@@ -153,7 +102,7 @@ const imageSliderItems = ref(
     align-items: flex-end;
     justify-content: flex-start;
     transition: opacity 0.3s ease-in-out;
-    opacity: 0.6;
+    opacity: 0.4;
 }
 
 .slide-active {
@@ -171,8 +120,11 @@ const imageSliderItems = ref(
 
 
 .slider-container {
-    width: 80vw;
-    height: 100%;
+    width: 75vw;
+    height: 80%;
+    animation-delay: 0.8s;
+    margin-bottom: 4rem;
+    margin-top: 2rem;
 }
 
 .swiper-container {
@@ -187,7 +139,7 @@ const imageSliderItems = ref(
 .heading-gold {
     font-size: 4rem;
     text-align: center;
-    margin-top: 7rem;
     line-height: 120%;
+    margin-top: 2rem;
 }
 </style>

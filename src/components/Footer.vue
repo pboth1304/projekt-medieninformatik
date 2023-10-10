@@ -12,7 +12,7 @@ const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 <style scoped>
 .footer-scroll-top {
     height: 12rem;
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
