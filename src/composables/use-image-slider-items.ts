@@ -12,35 +12,35 @@ export const useImageSliderItems = () => {
     },
     {
       title: 'Bietigheim',
-      imgPath: '/img/weinfaesser.jpg'
+      imgPath: '/img/bietigheim.jpg'
     },
     {
       title: 'Gemmrigheim',
-      imgPath: '/img/abstatt.jpg'
+      imgPath: '/img/gemmrigheim.jpg'
     },
     {
       title: 'Hessigheim',
-      imgPath: '/img/abstatt.jpg'
+      imgPath: '/img/hessigheim.jpg'
     },
     {
       title: 'Ilsfeld',
-      imgPath: '/img/abstatt.jpg'
+      imgPath: '/img/ilsfeld.jpg'
     },
     {
       title: 'Ingersheim',
-      imgPath: '/img/abstatt.jpg'
+      imgPath: '/img/ingersheim.jpg'
     },
     {
       title: 'Liebenstein',
-      imgPath: '/img/abstatt.jpg'
+      imgPath: '/img/liebenstein.jpg'
     },
     {
       title: 'Löchgau',
-      imgPath: '/img/abstatt.jpg'
+      imgPath: '/img/loechgau.jpg'
     },
     {
       title: 'Walheim',
-      imgPath: '/img/abstatt.jpg'
+      imgPath: '/img/walheim.jpg'
     }
   ]);
 
