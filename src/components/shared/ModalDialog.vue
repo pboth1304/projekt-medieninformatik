@@ -97,4 +97,10 @@ dialog header {
 .close-icon:after {
     transform: rotate(-45deg);
 }
+
+@media screen and (max-width: 1000px) {
+    .dialog {
+        width: 80%;
+    }
+}
 </style>

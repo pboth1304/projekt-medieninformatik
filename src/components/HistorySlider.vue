@@ -71,7 +71,7 @@ button:hover,
 
 button:not(:last-child)::after {
     width: 2px;
-    height: 32px;
+    height: 3.2rem;
     display: inline-block;
     position: absolute;
     content: "";

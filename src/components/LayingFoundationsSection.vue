@@ -87,4 +87,22 @@ defineProps<LayingFoundationsSectionProps>()
         transform: translateY(0);
     }
 }
+
+@media screen and (max-width: 1200px) {
+    .wine-bottles img:first-child {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .wine-bottles img {
+        animation-name: none;
+    }
+
+    .text-white {
+        font-size: 2.4rem;
+        line-height: 4.2rem;
+        max-width: 100%;
+    }
+}
 </style>

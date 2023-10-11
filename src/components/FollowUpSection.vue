@@ -173,4 +173,17 @@ h3 {
         outline-offset: 2px;
     }
 }
+
+@media screen and (max-width: 600px) {
+    .follow-up-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: var(--page-padding-y) var(--page-padding-x);
+    }
+
+    .follow-up-container.bietigheim {
+        flex-direction: row-reverse;
+    }
+}
 </style>

@@ -76,4 +76,28 @@ import AnimatedScroll from './shared/AnimatedScroll.vue';
     margin-bottom: 2rem;
     animation-delay: 2.4s;
 }
+
+@media screen and (max-width: 1000px) {
+    .heading-container {
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 4rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .heading-container {
+        align-items: center;
+        padding: 0 2rem;
+    }
+
+    .heading h1 {
+        font-size: 3.5rem;
+        line-height: 4.5rem;
+    }
+
+    .subheading {
+        font-size: 1.8rem;
+    }
+}
 </style>

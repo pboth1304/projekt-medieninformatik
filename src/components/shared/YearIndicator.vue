@@ -37,4 +37,20 @@ const splittedYearString = computed(() =>
     line-height: 9rem;
     letter-spacing: 2px;
 }
+
+@media screen and (max-width: 600px) {
+    .year-indicator {
+        font-size: 12rem;
+    }
+
+    .year-indicator-l {
+        font-size: 12rem;
+        line-height: 13rem;
+    }
+
+    .year-indicator-s {
+        font-size: 7rem;
+        line-height: 8rem;
+    }
+}
 </style>

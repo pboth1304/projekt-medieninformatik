@@ -142,4 +142,10 @@ watchEffect(() => {
     line-height: 120%;
     margin-top: 2rem;
 }
+
+@media screen and (max-width: 600px) {
+    .slide-title {
+        font-size: 2.4rem;
+    }
+}
 </style>

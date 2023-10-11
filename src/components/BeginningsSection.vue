@@ -78,4 +78,34 @@ p {
 .heading-gold {
     animation-delay: 0.8s;
 }
+
+@media screen and (max-width: 1000px) {
+    .texts {
+        flex-direction: column;
+    }
+
+    .heading-gold {
+        font-size: 4rem;
+        margin-bottom: 3rem;
+    }
+
+    .texts p {
+        width: 100%;
+        font-size: 2rem;
+        line-height: 3.2rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .heading-gold {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .texts p {
+        width: 100%;
+        font-size: 1.8rem;
+        line-height: 3rem;
+    }
+}
 </style>

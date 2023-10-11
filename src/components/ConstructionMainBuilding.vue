@@ -47,4 +47,17 @@ defineProps<ConstructionMainBuildingProps>()
     font-weight: 200;
     animation-delay: 0.8s;
 }
+
+@media screen and (max-width: 1000px) {
+    .text-white {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .text-white {
+        font-size: 2.4rem;
+        line-height: 4.2rem;
+    }
+}
 </style>
