@@ -45,7 +45,6 @@ button {
     height: 1.6rem;
     width: 1.6rem;
     cursor: pointer;
-    outline: 1px solid var(--white-transparent);
     outline-offset: 1px;
     transition: all 0.2s ease-in-out;
 }
@@ -61,12 +60,30 @@ button {
     top: 0;
     color: var(--gold);
     letter-spacing: 1px;
+    font-family: 'Merriweather', serif;
 }
 
 button:hover,
 .current-section-container {
     background-color: var(--gold);
-    outline: 1px solid var(--gold);
+}
+
+.current-section-container::before,
+button:hover::before {
+    border: 1px solid var(--gold);
+
+}
+
+button::before {
+    content: "";
+    border: 1px solid var(--white-transparent);
+    height: 1.8rem;
+    width: 1.8rem;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    top: -2px;
+    left: -2px;
 }
 
 button:not(:last-child)::after {

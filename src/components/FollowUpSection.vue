@@ -5,19 +5,19 @@
             <div class="loechgau follow-up-container animated">
                 <YearIndicator year="1939" size="s" class="year-indicator" />
                 <p class="heading-gold">Folgten die Löchgauer.
-                    <span class="tooltip-toggle" @click="openDialog(Towns.Loechgau)"></span>
-                    <ModalDialog :is-open="visibleDialog === Towns.Loechgau" text="Lorem ipsum" @closed="onDialogClosed">
-                        <template #header>
-                            <h3>Löchgau</h3>
-                        </template>
-                        <p>
-                            Löchgau ist ein Weinbauort, dessen Lagen zur Großlage Schalkstein des Weinbaugebietes
-                            Württemberg gehören.
-                            Bereits 1407 wurde erstmals urkundlich erwähnt, dass die Kelter als Weinumschlagplatz genutzt
-                            wurde.
-                            1939 schlossen sich die Löchgauer den Besigheimer Winzern an.
-                        </p>
-                    </ModalDialog>
+                <div class="tooltip-toggle" @click="openDialog(Towns.Loechgau)"></div>
+                <ModalDialog :is-open="visibleDialog === Towns.Loechgau" text="Lorem ipsum" @closed="onDialogClosed">
+                    <template #header>
+                        <h3>Löchgau</h3>
+                    </template>
+                    <p>
+                        Löchgau ist ein Weinbauort, dessen Lagen zur Großlage Schalkstein des Weinbaugebietes
+                        Württemberg gehören.
+                        Bereits 1407 wurde erstmals urkundlich erwähnt, dass die Kelter als Weinumschlagplatz genutzt
+                        wurde.
+                        1939 schlossen sich die Löchgauer den Besigheimer Winzern an.
+                    </p>
+                </ModalDialog>
                 </p>
             </div>
             <div class="bietigheim follow-up-container animated">
@@ -143,9 +143,7 @@ h3 {
     height: 1.6rem;
     width: 1.6rem;
     background-color: var(--gold);
-    border-radius: 100%;
-    outline: var(--gold) solid 1px;
-    outline-offset: 2px;
+    border-radius: 50%;
     transform: translate(50%, 50%);
     transition: all 1s ease-in-out;
     cursor: pointer;
@@ -153,6 +151,23 @@ h3 {
 
 .tooltip-toggle:hover,
 .tooltip-toggle:focus {
+    opacity: 0.6;
+}
+
+.tooltip-toggle::after {
+    content: "";
+    border: 1px solid var(--gold);
+    height: 1.8rem;
+    width: 1.8rem;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+}
+
+.tooltip-toggle:hover::after,
+.tooltip-toggle:focus::after {
     animation-name: pulsate;
     animation-timing-function: ease-in-out;
     animation-duration: 1s;
@@ -161,16 +176,15 @@ h3 {
 
 @keyframes pulsate {
     0% {
-        outline-offset: 2px;
+        transform: scale(1);
     }
 
     50% {
-        outline-offset: 3px;
-        outline-width: 2px;
+        transform: scale(1.1);
     }
 
     100% {
-        outline-offset: 2px;
+        transform: scale(1.0);
     }
 }
 
