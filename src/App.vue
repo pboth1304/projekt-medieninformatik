@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router';
+import HistoryPage from './views/HistoryPage.vue';
 </script>
 
 <template>
-  <RouterView />
+  <HistoryPage />
 </template>
 
 <style scoped></style>
