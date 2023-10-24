@@ -8,7 +8,7 @@ export const useImageSliderItems = () => {
     },
     {
       title: 'Besigheim',
-      imgPath: '/img/logo.png'
+      imgPath: '/img/besigheim-1-min.jpg'
     },
     {
       title: 'Bietigheim',

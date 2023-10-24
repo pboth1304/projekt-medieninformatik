@@ -28,7 +28,7 @@ defineProps<LayingFoundationsSectionProps>()
     width: 100%;
     background-image:
         linear-gradient(10deg, rgba(0, 0, 0, 0.9) 50%, rgba(66, 66, 66, 0.93) 90%, rgba(66, 66, 66, 0.73) 100%),
-        url('/img/felsengearten.jpg');
+        url('/img/besigheim-2-min.jpg');
     background-position: center center;
     background-size: cover;
     padding: var(--page-padding-y) var(--page-padding-x);
